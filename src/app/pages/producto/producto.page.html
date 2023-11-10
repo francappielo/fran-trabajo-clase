@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>producto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{producto.nombre}}</ion-title>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <img src="{{producto.imagen}}">
+  <p>{{producto.ingredientes}}</p>
+  <p>${{producto.precio}}</p>
+  <app-contador (cantidadCambiada)="cantidad=$event"></app-contador>
+  <ion-button fill="outline" shape="round" expand="block" color="dark" (click)="onAgregarAlCarritoClick()">Agregar al carrito</ion-button>
+ 
+
+</ion-content>
